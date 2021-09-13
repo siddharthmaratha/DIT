@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIT | Home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: lightgray;
+            margin: 0%;
+        }
+        header{
+            background-color:darkcyan;
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: bold;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        nav{
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a{
+            display: block;
+            background-color: #333;
+            text-decoration: none;
+            color: white;
+            float: left;
+            padding: 5px 10px;
+        }
+        nav a:hover{
+            color: darkcyan;
+        }
+        #submit{
+            text-align: center;
+            padding: 5px;
+            border: 20px;
+            border-radius: 15%;
+            border-color: black;
+            color: whitesmoke;
+            background-color: rgb(58, 158, 58);
+        }
+        #submit:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+        .subject{
+            color: black;
+            word-spacing: 5px;
+        }
+        .difficulty{
+            color: black;
+            word-spacing: 5px;
+        }
+        section{
+            padding: 50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <img src="dr.doge.png" alt="Doge"> Doge Institute of Technology
+    </header>
+    <main> 
+         <nav>
+             <a href="index.html">Home</a>
+             <a href="notes.html">Notes</a>
+             <a href="practice.html">Practice</a>
+             <a href="#home">Time Table Generator</a>
+             <a href="help.html">Help</a>
+             <a href="aboutus.html">About Us</a>
+         </nav>
+        <section>
+            <div class="subject">
+                <form class="form">
+                   <label id="subject1">
+                        Subject 1 <input type="text" name="sub1" id="sub1">
+                    </label> <br> <br>
+
+                    <label id="subject2">
+                        Subject 2 <input type="text" name="sub2" id="sub2">
+                    </label> <br> <br>
+
+                    <label id="subject3">
+                        Subject 3 <input type="text" name="sub3" id="sub3">
+                    </label> <br> <br>
+
+                    <label id="subject4">
+                        Subject 4 <input type="text" name="sub4" id="sub4">
+                    </label> <br> <br>
+
+                    <label id="submit">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="submit">Submit</button>
+                    </label>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <span class="difficulty">
+               <span>
+                    <h3>Subject 1</h3> <input type="radio" name="sub1dif" id="sub1easy"> Easy <input type="radio" name="sub1dif" id="sub1medium"> Medium <input type="radio" name="sub1dif" id="sub1hard"> hard
+               </span> <br> <br>
+
+               <span>
+                <h3>Subject 2</h3> <input type="radio" name="sub2dif" id="sub2easy"> Easy <input type="radio" name="sub2dif" id="sub2medium"> Medium <input type="radio" name="sub2dif" id="sub2hard"> hard
+                </span> <br> <br>
+
+                <span>
+                    <h3>Subject 3</h3> <input type="radio" name="sub3dif" id="sub3easy"> Easy <input type="radio" name="sub3dif" id="sub3medium"> Medium <input type="radio" name="sub3dif" id="sub3hard"> hard
+                </span> <br> <br>
+
+                <span>
+                    <h3>Subject 4</h3> <input type="radio" name="sub4dif" id="sub4easy"> Easy <input type="radio" name="sub4dif" id="sub4medium"> Medium <input type="radio" name="sub4dif" id="sub4hard"> hard
+                </span> <br> <br>
+                
+                <span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="submit">Submit</button>
+                </span>
+            </span>
+            
+        </section>
+    <script>
+        const subject = document.querySelector('.subject'),
+              form = subject.querySelectorAll('.form'),
+              submitInput = form[0].querySelector('input[type="submit"]');
+
+        function getDataForm(e){
+            e.preventDefault();
+            var formData = new FormData(form[0]);
+            alert(formData.get);
+        }
+    </script>
+    </main>
+</body>
+</html>
